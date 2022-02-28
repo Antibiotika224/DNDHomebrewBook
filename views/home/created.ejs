@@ -13,17 +13,10 @@
 
 <body>
 
-    <h1>TEST PAGE</h1>
-    <a class="btn btn-secondary" href="http://localhost:3000/home">MAIN</a>
-  
-    
-  
     <div class="stat-block wide">
       <hr class="orange-border" />
       <div class="section-left">
         <div class="creature-heading">
-
-     
          <h1><%=charFullname%></h1>
 
 
@@ -43,7 +36,7 @@
           </div> <!-- property line -->
           <div class="property-line last">
             <h4>Speed</h4>
-            <p>25ft.</p>
+            <%=Speed%>
           </div> <!-- property line -->
           <svg height="5" width="100%" class="tapered-rule">
           <polyline points="0,0 400,2.5 0,5"></polyline>
@@ -51,35 +44,36 @@
           <div class="abilities">
             <div class="ability-strength">
               <h4>STR</h4>
-              <p>14 (+2)</p>
+              <p><%=Strength%></p>
             </div> <!-- ability strength -->
             <div class="ability-dexterity">
               <h4>DEX</h4>
-              <p>11 (+0)</p>
+              <p><%=Dexterity%></p>
             </div> <!-- ability dexterity -->
             <div class="ability-constitution">
               <h4>CON</h4>
-              <p>13 (+1)</p>
-            </div> <!-- ability constitution -->
+              <p><%=Constitution%></p>
+              </div>
             <div class="ability-intelligence">
               <h4>INT</h4>
-              <p>1 (-5)</p>
+              <p><%=Intelligence%></p>
             </div> <!-- ability intelligence -->
             <div class="ability-wisdom">
               <h4>WIS</h4>
-              <p>3 (-4)</p>
+              <p><%=Wisdom%></p>
             </div> <!-- ability wisdom -->
             <div class="ability-charisma">
               <h4>CHA</h4>
-              <p>1 (-5)</p>
+              <p><%=Charisma%></p>
             </div> <!-- ability charisma -->
           </div> <!-- abilities -->
+          
           <svg height="5" width="100%" class="tapered-rule">
           <polyline points="0,0 400,2.5 0,5"></polyline>
         </svg>
           <div class="property-line first">
             <h4>Damage Immunities</h4>
-            <p>poison, psychic</p>
+            <p><%=DmgImune%></p>
           </div> <!-- property line -->
           <div class="property-line">
             <h4>Condition Immunities</h4>
@@ -145,7 +139,7 @@
     </div> <!-- stat block -->
 
 
-
+</body>
 
 
 
@@ -169,12 +163,13 @@ display: inline-block;
 vertical-align: top;
 width: 17%;
 min-width:280px;
-background: #FDF1DC;
-padding: 5px 10px 20px;
+background: #e9cc9c;
+padding: 2px 6px 14px;
 box-shadow: 0 0 1.5em #867453;
 }
 .stat-block.wide{
 width: 46.5%;
+background: #e9cc9c;
 min-width: 560px;
 text-align: center;
 }
@@ -210,7 +205,7 @@ margin-left: 1.5%;
 .orange-border{
 display: block;
 background: #E69A28;
-border: 1px solid #000;
+border: 4px solid #000;
 height: 5px;
 padding: 0 10px 0;
 margin: -10px -10px 0;
@@ -250,6 +245,13 @@ letter-spacing: 1px;
 font-variant: small-caps;
 font-weight: bold;
 }
+#head{
+font-family: 'Libre Baskerville', 'Lora', 'Calisto MT', 'Bookman Old Style', Bookman, 'Goudy Old Style', Garamond, 'Hoefler Text', 'Bitstream Charter', Georgia, serif;
+color: #922610;
+letter-spacing: 1px;
+font-variant: small-caps;
+font-weight: bold;
+}
 .creature-heading h2{
 font-weight: normal;
 font-style: italic;
@@ -257,7 +259,7 @@ font-size: 12px;
 line-height: 1.2em;
 margin: 0 0 10px;
 }
-.property-line h4,
+
 .property-line p{
 display: inline;
 margin: 0;
@@ -278,6 +280,7 @@ margin: 8px 0 0
 }
 .property-line.last{
 margin: 0 0 10px;
+font-size: 14px;
 }
 .abilities{
 text-align: center;
@@ -286,25 +289,24 @@ color: #922610;
 .abilities > div{
 display: inline-block;
 vertical-align: middle;
-width: 15.5%;
-min-width: 40px; 
-font-size: 12px;
+min-width: 30px; 
+font-size: 9px;
 line-height: 1em;
 }
 .abilities h4{
-margin: 10px 0 2px;
+margin: 5px 0 1px;
 font-size: 14px;
 line-height: 1.2em;
 text-transform: uppercase;
 color: #7A200D;
 }
 .abilities p{
-margin: 0 0 10px;
+margin: 0 0 7px;
 line-height: 1.2em;
 }
 .property-block h4,
 .property-block p{
-font-size: 13.5px;
+font-size: 11px;
 line-height: 1.2em;
 display: inline;
 margin: 0;

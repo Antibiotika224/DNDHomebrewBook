@@ -2,18 +2,20 @@ const express = require('express');
 
 const router = express.Router();
 const Completed = require('../models/people');
+const Monster = require('../models/monsters');
 
 router.get('/',async (res,req)=>{
    const character=  await Completed.find({})
-  console.log(character)
-  req.render('home/home' ,{character})
+   const monster=  await Monster.find({})
+  console.log(Monster)
+  req.render('home/home' ,{character,monster})
   })
 
   router.get('/:id', async (req,res)=>{
    const {id} = req.params 
    const character = await Completed.findById(id);
-   
-   res.render('home/created' ,{character});
+   const monster = await Monster.findById(id);
+   res.render('home/created' ,{character,monster});
    
      })
 router.post('/submit', async (req, res) => {

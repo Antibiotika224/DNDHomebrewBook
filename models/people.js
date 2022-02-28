@@ -44,6 +44,10 @@ const peopleSchema = new mongoose.Schema({
    Speed:{
       type: String
    }
+   ,
+   DamageImmunities:{
+      type: String
+   }
 })
 
 module.exports = mongoose.model('people', peopleSchema);

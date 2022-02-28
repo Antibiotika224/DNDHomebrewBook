@@ -73,11 +73,14 @@ const adminRouter = require('./routes/admin');
 const peoplerouter = require('./routes/people');
 const homeRouter = require('./routes/home')
 const createdRouter = require('./routes/created')
+const monsterRouter = require('./routes/monsters')
+const creatmonstorRouter = require('./routes/createdmonsters')
 
 
 
 
 app.use(express.json())
+app.use('/monsters',monsterRouter)
 app.use('/created',createdRouter)
 app.use('/user', userRouter);
 app.use('/home',homeRouter)

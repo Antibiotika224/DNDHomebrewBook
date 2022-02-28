@@ -12,7 +12,7 @@ router.get('/',async (res,req)=>{
 router.post('/submit', async (req, res) => {
    try {
     const {fullname, RaceAlign,ArmorClass,HitPoints,Dexterity,Strength,Constitution
-   ,Intelligence,Wisdom,Charisma,Speed
+   ,Intelligence,Wisdom,Charisma,Speed, DamageImmunities
    } = req.body;
     const people = new People({
         fullname,
@@ -25,11 +25,13 @@ router.post('/submit', async (req, res) => {
         Intelligence,
         Wisdom,
         Charisma,
-        Speed
+        Speed,
+        DamageImmunities
+        
      })
      await people.save();
    
-      res.redirect('/people');
+      res.redirect('/home');
      
    } catch(e) {
       console.log(e);
