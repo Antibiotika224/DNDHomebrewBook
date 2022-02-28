@@ -6,59 +6,157 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Document</title>
    <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-   <style>
-      .container {
-         margin: 100px;
-      }
-   </style>
+
+  
 </head>
 <body>
-   
+
    <div class="container">
-
-      <%- include('partials/navbar') %>
-     <h1>Home Page</h1>
-   
-
-     <svg width="128" height="128" viewBox="0 0 128 128">
-     
-      <filter id="displacementFilter">
-        <feTurbulence type="turbulence" baseFrequency="0.0006879043328683193" numOctaves="2" result="turbulence" style="transform: scale(1);"></feTurbulence>
-        <feDisplacementMap in2="turbulence" in="SourceGraphic" scale="1.1926132132031295" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
-      </filter>      
-<polygon points="64 127.18331997601874 8.574 96.05503234662946 9.32893373106301 32.490888531934836 64 0.05503234662946577 118.67106626893698 32.490888531934836 119.426 96.05503234662946 " style="filter: url(&quot;#displacementFilter&quot;); transform: scale(1);" fill="currentColor"></polygon>
-    
-      
-   </svg>
- <a  href="https://dnd-homebrew-book-yffll.ondigitalocean.app/home">
-
-   <svg width="128" height="128" viewBox="0 0 128 128">
-     
-      <filter id="displacementFilter">
-        <feTurbulence type="turbulence" baseFrequency="0.0006879043328683193" numOctaves="2" result="turbulence" style="transform: scale(1);"></feTurbulence>
-        <feDisplacementMap in2="turbulence" in="SourceGraphic" scale="1.1926132132031295" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
-      </filter>      
-<polygon points="64 127.18331997601874 8.574 96.05503234662946 9.32893373106301 32.490888531934836 64 0.05503234662946577 118.67106626893698 32.490888531934836 119.426 96.05503234662946 " style="filter: url(&quot;#displacementFilter&quot;); transform: scale(1);" fill="currentColor"></polygon>
-    
-      
-   </svg>
-
- </a>
-   
-     <br><br>
-     <a class="btn btn-secondary" href="https://dnd-homebrew-book-yffll.ondigitalocean.app/auth">LOGIN</a>
+      <div  id="Dice" class="content">
+        <h2 class="frame-1">Are You Ready?</h2>
+        <h2 class="frame-2">To begin Your Adventures</h2>
+        <h2 class="frame-3">On a Epic Journey You will go</h2>
+        <h2 class="frame-4">Now!</h2>
+        <h2 class="frame-5">
+          <span id="Dice" >Click Anywhere to Start your journey</span> 
+        </h2>
+      </div>
    </div>
-   
-<script src="anime.min.js"></script>
-<script>
-
-
-</script>
+  
+  
+<script defer src="node_modules/swup/dist/sup.mi.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script>
+      const box1 = document.getElementById('Dice');
+    box1.addEventListener('click', function(){
 
+
+
+
+      window.location = "http://localhost:3000/home";
+       })
+</script>
 </body>
+<style>
+   body {
+  background: #310404;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.container {
+  position: fixed;
+margin-top: -5px;
+margin-left: -5px;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: -webkit-radial-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3) 35%, rgba(0, 0, 0, 0.7));
+  background: -moz-radial-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3) 35%, rgba(0, 0, 0, 0.7));
+  background: -ms-radial-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3) 35%, rgba(0, 0, 0, 0.7));
+  background: radial-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3) 35%, rgba(0, 0, 0, 0.7));
+}
+.content {
+  margin-top: 0;
+  display: flex;
+  position: initial;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  z-index: 1000;
+}
+.container h2 {
+  position: absolute;
+  top: 50%;
+  line-height: 100px;
+  height: 100px;
+  margin-top: -50px;
+  font-size: 40px;
+  width: 100%;
+  text-align: center;
+  color: transparent;
+  animation: blurFadeInOut 2s ease-in backwards;
+}
+.container h2.frame-1 {
+  animation-delay: 0s;
+}
+.container h2.frame-2 {
+  animation-delay: 1.5s;
+}
+.container h2.frame-3 {
+  animation-delay: 3s;
+}
+.container h2.frame-4 {
+  font-size: 200px;
+  animation-delay: 5s;
+}
+.container h2.frame-5 {
+  animation: none;
+  color: transparent;
+  text-shadow: 0px 0px 1px #fff;
+}
+.container h2.frame-5 span {
+  animation: blurFadeIn 3s ease-in 5s backwards;
+  color: transparent;
+  text-shadow: 0px 0px 1px #fff;
+}
+.container h2.frame-5 span:nth-child(2) {
+  animation-delay: 9s;
+}
+.container h2.frame-5 span:nth-child(3) {
+  animation-delay: 10s;
+}
+
+@keyframes blurFadeInOut{
+  0%{
+    opacity: 0;
+    text-shadow: 0px 0px 40px #fff;
+    transform: scale(0.9);
+  }
+  20%,75%{
+    opacity: 1;
+    text-shadow: 0px 0px 1px #fff;
+    transform: scale(1);
+  }
+  100%{
+    opacity: 0;
+    text-shadow: 0px 0px 50px #fff;
+    transform: scale(0);
+  }
+}
+@keyframes blurFadeIn{
+  0%{
+    opacity: 0;
+    text-shadow: 0px 0px 40px #fff;
+    transform: scale(1.3);
+  }
+  50%{
+    opacity: 0.5;
+    text-shadow: 0px 0px 10px #fff;
+    transform: scale(1.1);
+  }
+  100%{
+    opacity: 1;
+    text-shadow: 0px 0px 1px #fff;
+    transform: scale(1);
+  }
+}
+@keyframes fadeInBack{
+  0%{
+    opacity: 0;
+    transform: scale(0);
+  }
+  50%{
+    opacity: 0.4;
+    transform: scale(2);
+  }
+  100%{
+    opacity: 0.2;
+    transform: scale(5);
+  }
+}
+</style>
 </html>
   
