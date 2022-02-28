@@ -1,18 +1,18 @@
 const express = require('express');
-const People = require('../models/people');
+const People = require('../models/monsters');
 const router = express.Router();
 
 
 router.get('/',async (res,req)=>{
    const character=  await People.find({})
   console.log(character)
-  req.render('home/people' ,{character})
+  req.render('home/monsters' ,{character})
   })
 
 router.post('/submit', async (req, res) => {
    try {
     const {fullname, RaceAlign,ArmorClass,HitPoints,Dexterity,Strength,Constitution
-   ,Intelligence,Wisdom,Charisma,Speed, DamageImmunities
+   ,Intelligence,Wisdom,Charisma,Speed
    } = req.body;
     const people = new People({
         fullname,
@@ -26,12 +26,11 @@ router.post('/submit', async (req, res) => {
         Wisdom,
         Charisma,
         Speed,
-        DamageImmunities
         
      })
      await people.save();
    
-      res.redirect('/home');
+      res.redirect('/monsters');
      
    } catch(e) {
       console.log(e);

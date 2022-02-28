@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const peopleSchema = new mongoose.Schema({
+const monstersSchema = new mongoose.Schema({
    fullname: {
       type: String,
      
@@ -44,10 +44,6 @@ const peopleSchema = new mongoose.Schema({
    Speed:{
       type: String
    }
-   ,
-   DamageImmunities:{
-      type: String
-   }
 })
 
-module.exports = mongoose.model('people', peopleSchema);
+module.exports = mongoose.model('monsters', monstersSchema);
