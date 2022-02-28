@@ -15,6 +15,7 @@
   <%- include('../partials/navbar') %>
 
   <h1 id="head">Create a Character</h1>
+  <form action="/people/submit" method="POST">
   <div>
     <button style="color: #922610; background-color:#e9cc9c; " class="btn btn-secondary" type="submit">Create</button>
     <a style="color: #922610; background-color:#e9cc9c; " class="btn btn-secondary" href="https://dnd-homebrew-book-yffll.ondigitalocean.app/home">Cancel</a>
@@ -24,7 +25,7 @@
         <div class="section-left">
           <div class="creature-heading">
 
-       <form action="/people/submit" method="POST">
+      
             <input placeholder="Name" type="text" name="fullname" id="creature-head">
 
 
