@@ -1,3 +1,4 @@
+
 const mongoose = require('mongoose');
 
 const monstersSchema = new mongoose.Schema({
@@ -45,3 +46,5 @@ const monstersSchema = new mongoose.Schema({
       type: String
    }
 })
+
+module.exports = mongoose.model('monsters', monstersSchema);
