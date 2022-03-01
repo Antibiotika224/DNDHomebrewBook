@@ -75,6 +75,7 @@ const homeRouter = require('./routes/home')
 const createdRouter = require('./routes/created')
 const monsterRouter = require('./routes/monsters')
 const creatmonstorRouter = require('./routes/createdmonsters')
+const storyrouter = require('./routes/story')
 
 
 
@@ -87,6 +88,7 @@ app.use('/home',homeRouter)
 app.use('/admin', adminRouter);
 app.use('/people',peoplerouter)
 app.use('/test',testRouter)
+app.use('/story',storyrouter)
 
 
 app.get('/', (req, res) => {
