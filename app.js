@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const mongoose = require('mongoose');
+const MethodOveride = require('method-override')
 const User = require('./models/user'); 
 
 const Completed = require('./models/people');
@@ -76,6 +77,7 @@ const createdRouter = require('./routes/created')
 const monsterRouter = require('./routes/monsters')
 const creatmonstorRouter = require('./routes/createdmonsters')
 const storyrouter = require('./routes/story')
+const createdstoryrouter = require('./routes/createdstory')
 
 
 
@@ -89,6 +91,8 @@ app.use('/admin', adminRouter);
 app.use('/people',peoplerouter)
 app.use('/test',testRouter)
 app.use('/story',storyrouter)
+app.use('/createdstory',createdstoryrouter)
+app.use(MethodOveride('_method'))
 
 
 app.get('/', (req, res) => {
