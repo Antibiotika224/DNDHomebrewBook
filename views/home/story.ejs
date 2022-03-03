@@ -47,7 +47,7 @@
      
     var Markup = tinymce.get("mytextarea").getContent();
     const TEXT = String(Markup);
-    const replaced = TEXT.replace(/\r?\n/g, '<br />')
+    const replaced = TEXT.replace(/\r?\n/g, '<br>')
     console.log(Markup)
      document.getElementById('hiddenField').value = replaced;
      document.getElementById("story").submit();

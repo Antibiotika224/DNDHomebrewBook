@@ -15,10 +15,9 @@
 
     <script src="https://cdn.tiny.cloud/1/8hdh0quk68sdgh0tab85v023w4oj0kuy4wd8rjne4aog9mg7/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script>
-      const test = '<%-story.Markup%>'
+      let test = '<%-story.Markup%>'
 console.log(test)
-   const replaced=   test.replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','').replace('<br /><p>&nbsp;</p><br />','')
-console.log(replaced)
+   const replaced=   test.replaceAll('<br /><p>&nbsp;</p><br />','').replaceAll('<br />'," ")
         tinymce.init({
   selector: '#mytextarea',
   plugins: ' table charmap hr pagebreak nonbreaking anchor insertdatetime advlist lists ',
@@ -65,7 +64,7 @@ console.log(replaced)
       </form>
 
 </body>
-<script>
+<!-- <script>
    function mySubmit() {
      
     var Markup = tinymce.get("mytextarea").getContent();
@@ -85,7 +84,7 @@ mySubmit();
        })
 
 
-</script>
+</script> -->
 
 <style>
 
