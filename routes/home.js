@@ -29,24 +29,9 @@ router.get('/',async (res,req)=>{
       
         })
 
+ 
 
 
-router.post('/submit', async (req, res) => {
-//    try {
-//     const {LName, FName} = req.body;
-//     const test = new Test({
-//         FName,
-//         LName
-//      })
-//      await test.save();
-   
-//       res.redirect('/test');
-     
-//    } catch(e) {
-//       console.log(e);
-//       res.sendStatus(500);
-//    }
-});
 
 
 module.exports = router;

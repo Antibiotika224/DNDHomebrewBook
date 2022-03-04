@@ -78,11 +78,13 @@ const monsterRouter = require('./routes/monsters')
 const creatmonstorRouter = require('./routes/createdmonsters')
 const storyrouter = require('./routes/story')
 const createdstoryrouter = require('./routes/createdstory')
-
+const editcharacterrouter = require('./routes/editcharacter')
 
 
 
 app.use(express.json())
+app.use('/editcharacter',editcharacterrouter)
+
 app.use('/monsters',monsterRouter)
 app.use('/created',createdRouter)
 app.use('/user', userRouter);

@@ -23,32 +23,16 @@ router.get('/',async (res,req)=>{
 
 router.put('/:id',async(req,res)=>{
   const {id} = req.params 
-Story.findByIdAndUpdate(id, req.body, {runValidators: true})
+const story = await Story.findByIdAndUpdate(id, req.body, {runValidators: true})
+res.redirect(story._id)
+})
 
-console.log(req.body)
-res.send("YES")
-}
+router.delete('created/:id',async(req,res)=>{
+  const {id} = req.params 
+const destroy = await Story.findByIdAndDelete(id)
+res.redirect('/home')
+})
 
-
-)
-
-
-router.post('/submit', async (req, res) => {
-//    try {
-//     const {LName, FName} = req.body;
-//     const test = new Test({
-//         FName,
-//         LName
-//      })
-//      await test.save();
-   
-//       res.redirect('/test');
-     
-//    } catch(e) {
-//       console.log(e);
-//       res.sendStatus(500);
-//    }
-});
 
 
 module.exports = router;

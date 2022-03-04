@@ -17,7 +17,7 @@
     <script>
       let test = '<%-story.Markup%>'
 console.log(test)
-   const replaced=   test.replaceAll('<br /><p>&nbsp;</p><br />','').replaceAll('<br />'," ")
+   const replaced=   test.replaceAll('<br><p>&nbsp;</p><br>','').replaceAll('<br>'," ")
         tinymce.init({
   selector: '#mytextarea',
   plugins: ' table charmap hr pagebreak nonbreaking anchor insertdatetime advlist lists ',
@@ -48,9 +48,12 @@ console.log(test)
 </head>
 <body style="background-size:cover; padding-left: 2%; padding-right: 2%; background-repeat: no-repeat; background-image: url('https://mcdn.wallpapersafari.com/medium/42/68/repdWB.jpg');"> 
   <%- include('../partials/navbar') %>
-  <h1 id="head"><%=story.StoryName%> </h1>
+
+  
+
  
-<form action="/createdstory/<%=story._id%>" method="put" id="story">
+<form action="/createdstory/<%=story._id%>?_method=put" method="post" id="story">
+  <input name="StoryName" id="head" type="text" value="<%=story.StoryName%>">
     <textarea id="mytextarea">
    
       </textarea>
@@ -61,16 +64,23 @@ console.log(test)
     
      
       <input type='hidden' id= 'hiddenField' name='Markup' value='' />
+      <button style="color: #922610; background-color:#e9cc9c; " class="btn btn-secondary"  type="submit"  id="SaveBtn" >Save Edit</button>
+      <a style="color: #922610; background-color:#e9cc9c; " class="btn btn-secondary" href="http://localhost:3000/home">Home</a>
       </form>
+      <form action="/createdstory/<%=story._id%>?_method=delete" method="post" id="story">
+      <button style="color: #922610; background-color:#e9cc9c; " class="btn btn-secondary"  type="submit"  >Delete Story</button>
+    </form> 
 
 </body>
-<!-- <script>
+<script>
    function mySubmit() {
      
     var Markup = tinymce.get("mytextarea").getContent();
+    const TEXT = String(Markup);
+    const replaced = TEXT.replace(/\r?\n/g, '<br>')
     console.log(Markup)
     // const text =String(Markup)
-     document.getElementById('hiddenField').value = Markup;
+     document.getElementById('hiddenField').value = replaced;
      document.getElementById("story").submit();
    }
 const ffs = document.getElementById('SaveBtn');
@@ -84,7 +94,7 @@ mySubmit();
        })
 
 
-</script> -->
+</script>
 
 <style>
 
