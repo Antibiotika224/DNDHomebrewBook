@@ -47,6 +47,21 @@ const peopleSchema = new mongoose.Schema({
    ,
    DamageImmunities:{
       type: String
+   }  ,
+   ConditionImmunities:{
+      type: String
+   }
+   ,
+   Senses:{
+      type: String
+   }
+   ,
+   Languages:{
+      type: String
+   }
+   ,
+   Challenge:{
+      type: String
    }
 })
 
