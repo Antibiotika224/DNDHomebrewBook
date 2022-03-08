@@ -55,26 +55,21 @@ console.log(test)
 
  
 <form action="/createdstory/<%=story._id%>?_method=put" method="post" id="story">
-  <input name="StoryName" id="head" type="text" value="<%=story.StoryName%>">
+  <input style="margin-bottom: 10px; margin-top: 5%;" name="StoryName" id="head" type="text" value="<%=story.StoryName%>">
     <textarea id="mytextarea">
    
       </textarea>
-  
-
-
-
-    
-     
-      <input type='hidden' id= 'hiddenField' name='Markup' value='' />
-      <button style="color: #922610; background-color:#e9cc9c; " class="btn btn-secondary"  type="submit"  id="SaveBtn" >Save Edit</button>
-      <a style="color: #922610; background-color:#e9cc9c; " class="btn btn-secondary" href="http://localhost:3000/home">Home</a>
-      </form>
-      <form action="/createdstory/<%=story._id%>?_method=delete" method="post" id="story">
-      <button style="color: #922610; background-color:#e9cc9c; " class="btn btn-secondary"  type="submit"  >Delete Story</button>
-    </form> 
-
+      <input type='hidden' id= 'hiddenField' name='Markup' value='' /></form>
+      <form action="/createdstory/<%=story._id%>?_method=delete" method="post" id="deletestory"></form>      
+    <button style="margin-top: 5px; color: #922610; background-color:#e9cc9c; " class="btn btn-secondary"  type="submit"  id="SaveBtn" >Save Edit</button>
+      <a style="margin-top: 5px;color: #922610; background-color:#e9cc9c; " class="btn btn-secondary" href="http://localhost:3000/home">Home</a>
+    <button style="margin-top: 5px;color: #922610; background-color:#e9cc9c; " class="btn btn-secondary" id="dltbtn">Delete Story</button>
 </body>
 <script>
+
+
+
+
    function mySubmit() {
      
     var Markup = tinymce.get("mytextarea").getContent();
@@ -94,6 +89,24 @@ mySubmit();
 
 
        })
+
+
+       function mydelete() {
+
+     
+      document.getElementById("deletestory").submit();
+    }
+ const dlt = document.getElementById('dltbtn');
+ dlt.addEventListener('click', function(){
+ 
+  mydelete();
+         
+        
+ 
+ 
+        })
+ 
+
 
 
 </script>

@@ -19,8 +19,10 @@ router.get('/',async (res,req)=>{
  
       router.delete('/:id',async(req,res)=>{
        const {id} = req.params 
+
+    
      const destroy = await Completed.findByIdAndDelete(id)
-     res.redirect('/editcharacter')
+     res.redirect('/home')
      })
  
      
@@ -29,11 +31,9 @@ router.get('/',async (res,req)=>{
     
      router.put('/:id',async(req,res)=>{
      
-         res.send("WERK")
          const {id} = req.params 
        const character = await Completed.findByIdAndUpdate(id, req.body, {runValidators: true})
-       console.log(req.body)
-     //   res.redirect(character._id)
+       res.redirect(character._id)
        })
  
  

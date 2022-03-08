@@ -27,8 +27,9 @@ const story = await Story.findByIdAndUpdate(id, req.body, {runValidators: true})
 res.redirect(story._id)
 })
 
-router.delete('created/:id',async(req,res)=>{
+router.delete('/:id',async(req,res)=>{
   const {id} = req.params 
+
 const destroy = await Story.findByIdAndDelete(id)
 res.redirect('/home')
 })

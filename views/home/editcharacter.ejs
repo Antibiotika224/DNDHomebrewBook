@@ -17,10 +17,14 @@
   <%- include('../partials/navbar') %>
 
   <h1 id="head">Create a Character</h1>
-  <form action="/editcharacter/<%=character._id%>?_method=put" method="post" id="story">
-    <button style="color: #922610; background-color:#e9cc9c; " class="btn btn-secondary" type="submit">Save Edit</button>
-        <a style="color: #922610; background-color:#e9cc9c; " class="btn btn-secondary" href="https://dnd-homebrew-book-yffll.ondigitalocean.app/home">Cancel</a>
-
+     
+  <button style="margin-top: 5px; color: #922610; background-color:#e9cc9c; " class="btn btn-secondary"  type="submit"  id="SaveBtn" >Save Edit</button>
+    <a style="margin-top: 5px;color: #922610; background-color:#e9cc9c; " class="btn btn-secondary" href="http://localhost:3000/home">Home</a>
+  <button style="margin-top: 5px;color: #922610; background-color:#e9cc9c; " class="btn btn-secondary" id="dltbtn">Delete Character</button>
+ 
+  
+  <form action="/editcharacter/<%=character._id%>?_method=put" method="post" id="char">
+    
   <div>
   </div>
     <div class="stat-block wide">
@@ -45,12 +49,12 @@
             </div> <!-- property line -->
             <div class="property-line">
               <h4>Hit Points</h4>
-              <input placeholder="33 (6d8 + 6)" type="text" name="HitPoints" id="property-line">
+              <input value="<%=character.HitPoints%>" placeholder="33 (6d8 + 6)" type="text" name="HitPoints" id="property-line">
              
             </div> <!-- property line -->
             <div class="property-line last">
               <h4>Speed</h4>
-              <input placeholder="18ft" type="text" name="Speed" id="property-line">
+              <inpu value="<%=character.Speed%>" placeholder="18ft" type="text" name="Speed" id="property-line">
 
             </div> <!-- property line -->
             <svg height="5" width="100%" class="tapered-rule">
@@ -59,49 +63,63 @@
             <div class="abilities">
               <div class="ability-strength">
                 <h4>STR</h4>
-                <input placeholder="18" type="text" name="Strength" id="abilities">
+
+                <input value="<%=character.Strength%>" placeholder="18" type="text" name="Strength" id="abilities">
 
               </div> <!-- ability strength -->
               <div class="ability-dexterity">
                 <h4>DEX</h4>
-                <input placeholder="18" type="text" name="Dexterity" id="abilities">              </div> <!-- ability dexterity -->
-              <div class="ability-constitution">
+
+                <input value="<%=character.Dexterity%>" placeholder="18" type="text" name="Dexterity" id="abilities">              </div> <!-- ability dexterity -->
+           
+                <div class="ability-constitution">
                 <h4>CON</h4>
-                <input placeholder="13" type="text" name="Constitution" id="abilities">              </div> <!-- ability constitution -->
-              <div class="ability-intelligence">
+
+                <input value="<%=character.Constitution%>" placeholder="13" type="text" name="Constitution" id="abilities">              </div> <!-- ability constitution -->
+             
+                <div class="ability-intelligence">
                 <h4>INT</h4>
-                <input placeholder="12" type="text" name="Intelligence" id="abilities">              </div> <!-- ability intelligence -->
-              <div class="ability-wisdom">
+
+                <input value="<%=character.Intelligence%>" placeholder="12" type="text" name="Intelligence" id="abilities">              </div> <!-- ability intelligence -->
+              
+                <div class="ability-wisdom">
                 <h4>WIS</h4>
-                <input placeholder="14" type="text" name="Wisdom" id="abilities">              </div> <!-- ability wisdom -->
-              <div class="ability-charisma">
+
+                <input value="<%=character.Wisdom%>" placeholder="14" type="text" name="Wisdom" id="abilities">              </div> <!-- ability wisdom -->
+            
+                <div class="ability-charisma">
                 <h4>CHA</h4>
-                <input placeholder="12" type="text" name="Charisma" id="abilities">              </div> <!-- ability charisma -->
-            </div> <!-- abilities -->
+
+                <input value="<%=character.Charisma%>" placeholder="12" type="text" name="Charisma" id="abilities">              </div> <!-- ability charisma -->
+           
+              </div> <!-- abilities -->
             <svg height="5" width="100%" class="tapered-rule">
             <polyline points="0,0 400,2.5 0,5"></polyline>
           </svg>
             <div class="property-line first">
               <h4>Damage Immunities</h4>
-              <input placeholder="poison, psychic" type="text" name="DamageImmunities" id="property-line">
+              <input value="<%=character.DamageImmunities%>" placeholder="poison, psychic" type="text" name="DamageImmunities" id="property-line">
            
             </div> <!-- property line -->
             <div class="property-line">
               <h4>Condition Immunities</h4>
-              <p>blinded, charmed, deafened, exhaustion, frightened,
-                  petrified, poisoned</p>
+              <input value="<%=character.ConditionImmunities%>" placeholder="blinded, charmed, deafened, exhaustion, frightened,
+              petrified, poisoned" type="text" name="ConditionImmunities" id="property-line">
+
             </div> <!-- property line -->
             <div class="property-line">
               <h4>Senses</h4>
-              <p>blindsight 60ft. (blind beyond this radius), passive Perception 6</p>
+             <input value="<%=character.Senses%>" placeholder="blindsight 60ft. (blind beyond this radius), passive Perception 6" type="text" name="Senses" id="property-line">
+
+         
             </div> <!-- property line -->
             <div class="property-line">
               <h4>Languages</h4>
-              <p>&mdash;</p>
+              <input value="<%=character.Languages%>" placeholder="Common,Dragonic,Elvish" type="text" name="Languages" id="property-line">
             </div> <!-- property line -->
             <div class="property-line last">
               <h4>Challenge</h4>
-              <p>1 (200 XP)</p>
+              <input value="<%=character.Challenge%>" placeholder="1 (200 XP)" type="text" name="Challenge" id="property-line">
             </div> <!-- property line -->
           </div> <!-- top stats -->
           <svg height="5" width="100%" class="tapered-rule">
@@ -152,11 +170,44 @@
       
  
     </form>
-
+    <form action="/editcharacter/<%=character._id%>?_method=delete" method="post" id="deletestory"></form>   
 
 
 </body>
+<script>
+function mySubmit() {
+  document.getElementById("char").submit();
+}
+const ffs = document.getElementById('SaveBtn');
+ffs.addEventListener('click', function(){
 
+mySubmit();
+     
+    
+
+
+    })
+
+
+    function mydelete() {
+
+  
+   document.getElementById("deletestory").submit();
+ }
+const dlt = document.getElementById('dltbtn');
+dlt.addEventListener('click', function(){
+
+mydelete();
+      
+     
+
+
+     })
+
+
+
+
+</script>
 
 
 
