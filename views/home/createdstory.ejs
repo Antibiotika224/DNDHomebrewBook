@@ -19,10 +19,11 @@
 console.log(test)
    const replaced=   test.replaceAll('<br><p>&nbsp;</p><br>','').replaceAll('<br>'," ")
         tinymce.init({
+          
   selector: '#mytextarea',
-  plugins: ' table charmap hr pagebreak nonbreaking anchor insertdatetime advlist lists ',
-  menubar: 'file edit view insert format tools table',
-  toolbar: 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak  |  ltr rtl',
+  plugins: 'image table charmap hr pagebreak nonbreaking anchor insertdatetime advlist lists ',
+  menubar: ' insert file edit view insert format tools table',
+  toolbar: ' image undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak  |  ltr rtl',
   toolbar_sticky: true,
   content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
   forced_root_blocks: false,
@@ -30,6 +31,7 @@ console.log(test)
  
   min_height: 600,
   min_width: 100,
+  
   setup: 
   function (editor) {
     
