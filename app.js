@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const MethodOveride = require('method-override')
 const User = require('./models/user'); 
 
+
 const Completed = require('./models/people');
 const bcrypt = require('bcrypt');
 const session = require('express-session');
@@ -16,6 +17,9 @@ mongoose.connect('mongodb+srv://Antibiotika224:Rm21021997@cluster0.einau.mongodb
       console.log("CONNECTION ERROR");
       console.log(err)
    })
+
+ 
+
 
 // view engine setup
 
